@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Test app">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="resources/css/style-main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Test app</title>
+    </head>
+    <body>
+        <header>
+            <div class="top-header">
+                <div class="login">
+                    <a href="#" title="login">
+                        <img src="resources/img/login.png" alt="login-icon">
+                        Login
+                    </a>
+                </div>
+                <div class="country">
+                        <div id="country" class="select">Select country
+                                <img src="resources/img/drop-down-arrow-black.png" title="drop-down">
+                        </div>
+                        <div id="country-list" class="dropdown">
+                            <ul>
+                                <li><i class="flag-icon flag-fr"></i>French (France)</li>
+                                <li><i class="flag-icon flag-de"></i>German (Germany)</li>
+                                <li><i class="flag-icon flag-in"></i>Hindi (India)</li>
+                                <li><i class="flag-icon flag-gb"></i>English (United Kingdom)</li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="logo">LOGO</div>
+                <div class="search">
+                    <input type="text" name="srcText" value="Search (Keywords,etc)">
+                </div>
+                <div class="lock-desktop"><i class="fa fa-lock"></i></div>
+            </div>
+            <nav class="nav-desktop">
+                <ul class="nav-desktop-list">
+                    <li class="primary-nav">
+                        <a href="#" title="New Arrivals">New Arrivals
+                            <img src="resources/img/drop-down-arrow.png" title="drop-down">
+                        </a>
+                    </li>
+                    <li class="primary-nav">
+                        <a href="#" title="Womens">Womens
+                                <img src="resources/img/drop-down-arrow.png" title="drop-down">
+                        </a>
+                    </li>
+                    <li class="primary-nav">
+                        <a href="#" title="Mens">Mens
+                                <img src="resources/img/drop-down-arrow.png" title="drop-down">
+                        </a>
+                    </li>
+                    <li class="primary-nav">
+                        <a href="#" title="Top Sellers">Top Sellers</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!--mobile-->
+            <div class="top-header-mobile">
+                <div class="mob-top-header">
+                    <div class="mobicon">
+                        <a class="mobile-nav-icon js--nav-icon">
+                            <img src="resources/img/hamburger-icon.png" alt="hamburger icon" class="ion-navicon-round">
+                        </a>
+                    </div>
+                    <div class="logo-mobile">Logo</div>
+                    <div class="mob-lock"><i class="fa fa-lock"></i></div>
+                </div>
+                <nav class="nav-mobile-expanded js--mob-nav">
+                        <ul class="nav-mobile">
+                            <li class="primary-nav-mobile close js--nav-close">
+                                Close
+                                <img src="resources/img/delete-sign.png" alt="close" class="close-icon">
+                            </li>
+                            <li class="primary-nav-mobile">
+                                <a href="#" title="New Arrivals">New Arrivals</a>
+                            </li>
+                            <li class="primary-nav-mobile">
+                                <a href="#" title="Womens">Womens</a>
+                            </li>
+                            <li class="primary-nav-mobile">
+                                <a href="#" title="Mens">Mens</a>
+                            </li>
+                            <li class="primary-nav-mobile">
+                                <a href="#" title="Top Sellers">Top Sellers</a>
+                            </li>
+                            <li class="primary-nav-mobile">
+                                <a href="#" title="login">
+                                    <img src="resources/img/login.png" alt="login-icon">
+                                    Login
+                                </a>
+                            </li>
+                            <li class="primary-nav-mobile">
+                                <div class="country-list">country-list</div>
+                            </li>
+                        </ul>
+                    </nav>
+                <div class="search-mobile">
+                        <input type="text" name="srcText" value="Search (Keywords,etc)">
+                </div>
+            </div>
+            
+        </header>
+        <script>
+                function selectCountry(countryDiv){
+                    var Selected = $(countryDiv);
+                    /*concatenate '-list' to access 'country-list' div*/
+                    var countryListDiv = $(countryDiv+'-list');
+                    var DropItem = countryListDiv.find('li');
+                    
+                    Selected.click(function(){
+                        Selected.toggleClass('open');
+                        countryListDiv.toggle();
+                    });
+                    
+                    countryListDiv.find('li').click(function(){
+                        Selected.removeClass('open');
+                        countryListDiv.hide();
+                        
+                        var item = $(this);
+                        Selected.html(item.html());
+                    });
+                }
+                
+                selectCountry('#country');
+                $('#country-list').hide();
+        </script>
+        <script>
+        $(document).ready(function() {
+            /* Mobile navigation */
+            $('.js--nav-icon').click(function() {
+                var nav = $('.js--mob-nav');
+                var icon = $('.js--nav-icon img');
+                
+                nav.slideToggle(200);
+                /*icon.toggleClass('ion-navicon-round');*/
+                icon.toggle();
+            });
+
+            $('.js--nav-close').click(function() {
+                var nav = $('.js--mob-nav');
+                var icon = $('.js--nav-icon img');
+                
+                nav.slideToggle(200);
+                /*icon.toggleClass('ion-navicon-round');*/
+                icon.toggle();
+            });
+        });
+        </script>
+    </body>
+</html>

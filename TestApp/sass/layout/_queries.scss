@@ -1,0 +1,21 @@
+/*Big tablets to 1200px (widths small than the 1140px row) */
+@media only screen and (max-width: 1200px) {}
+
+/* Small tablet to big tablet: from 921px to 1023px */
+@media only screen and (max-width: 1023px) {}
+
+/* Small phones to small tablets: from 768px to 920px */
+@media only screen and (max-width: 920px) {}
+
+/* Small phones to small tablets: from 551px to 767px */
+@media only screen and (max-width: 767px) {}
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 550px) {
+  .top-header, .nav-desktop {
+    display: none;
+  }
+  .top-header-mobile {
+    display: block;
+  }
+}

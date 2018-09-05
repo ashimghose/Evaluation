@@ -1,0 +1,63 @@
+/*Desktop navigation*/
+
+.nav-desktop {
+    background-color: black;
+    height: 30px;
+    padding-top: 15px;
+  }
+  
+  .nav-desktop-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline;
+      padding: 20px;
+      text-decoration: none;
+      a {
+        text-decoration: none;
+        color: white;
+        img {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+  
+  /*Mobile navigation*/
+  
+  .nav-mobile {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    li {
+      height: 40px;
+      border-style: solid;
+      border-width: 0.1px;
+      border-color: #dcdcdc;
+      border-bottom: 0;
+    }
+  }
+  
+  .close {
+    display: block;
+    text-align: right;
+    padding-top: 25px;
+    padding-right: 10px;
+  }
+  
+  .close-icon {
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+  }
+  
+  .nav-mobile li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }

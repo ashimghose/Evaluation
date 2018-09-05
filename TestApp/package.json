@@ -1,0 +1,14 @@
+{
+  "name": "testapp",
+  "version": "1.0.0",
+  "description": "Test app",
+  "main": "\t",
+  "scripts": {
+    "compile:saas": "node-sass sass/main.scss resources/css/style-main.css -w"
+  },
+  "author": "Ashim",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  }
+}
